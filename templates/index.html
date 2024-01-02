@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="manifest" href="{{ url_for('static', filename='json/manifest.json') }}">
+  <script src="{{ url_for('static', filename='js/stream.js') }}"></script>
+  <title>Trinix - Movie | TV Streaming </title>
+
+  <!-- 
+    - favicon
+  -->
+  <link rel="shortcut icon" href="https://cdn.discordapp.com/attachments/1187754883303084159/1189742144383107133/favicon2.ico" type="image">
+
+  <!-- 
+    - custom css link
+  -->
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+  
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body id="top">
+
+  <!-- 
+    - #HEADER
+  -->
+
+  <header class="header" data-header>
+    <div class="container">
+
+      <div class="overlay" data-overlay></div>
+
+      <a href="#top" class="logo">
+        <img src="https://cdn.discordapp.com/attachments/1187754883303084159/1189742144383107133/favicon2.ico" alt="Trinix Movies" height="50" width="50">
+      </a>
+
+      <div class="header-actions">
+
+      <div class="search-icon-container">
+        <div class="search-btn">
+          <ion-icon name="search-outline" onclick="toggleSearch()"></ion-icon>
+          <div id="search-dropdown" class="search-dropdown" style="display: none;">
+              <form action="/search" method="get">
+                  <input type="text" name="query" placeholder="Search for a movie, tv show, person..." required>
+                  <button type="submit">
+                  </button>
+              </form>
+          </div>
+      </div>
+      </div>
+      
+        <div class="lang-wrapper">
+          <label for="language">
+            <ion-icon name="globe-outline"></ion-icon>
+          </label>
+
+          <select name="language" id="language">
+            <option value="en">EN</option>
+          </select>
+        </div>
+
+        <button class="btn btn-primary">Discord</button>
+
+      </div>
+
+      <button class="menu-open-btn" data-menu-open-btn>
+        <ion-icon name="reorder-two"></ion-icon>
+      </button>
+
+      <nav class="navbar" data-navbar>
+
+        <div class="navbar-top">
+
+          <a href="#top" class="logo">
+            <img src="https://cdn.discordapp.com/attachments/1187754883303084159/1189742144383107133/favicon2.ico" alt="Trinix Movies" height="45" width="45">
+          </a>
+
+          <button class="menu-close-btn" data-menu-close-btn>
+            <ion-icon name="close-outline"></ion-icon>
+          </button>
+
+        </div>
+
+        <ul class="navbar-list">
+
+          <li>
+            <a href="#top" class="navbar-link">Home</a>
+          </li>
+
+          <li>
+            <a href="#trending-movies" class="navbar-link">Movie</a>
+          </li>
+
+          <li>
+            <a href="#trending-tv" class="navbar-link">Tv Show</a>
+          </li>
+
+        </ul>
+
+        <ul class="navbar-social-list">
+
+          <li>
+            <a href="#" class="navbar-social-link">
+              <ion-icon name="logo-twitter"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="navbar-social-link">
+              <ion-icon name="logo-facebook"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="navbar-social-link">
+              <ion-icon name="logo-pinterest"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="navbar-social-link">
+              <ion-icon name="logo-instagram"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="navbar-social-link">
+              <ion-icon name="logo-youtube"></ion-icon>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+    </div>
+  </header>
+
+  <main>
+    <article>
+
+      <!-- 
+        - #HERO
+      -->
+
+      <section id="top" class="hero">
+        <div class="container">
+
+          <div class="hero-content">
+
+            <p class="hero-subtitle">Now Trending</p>
+
+            <h1 class="h1 hero-title">
+              Unlimited <strong>Movie</strong>, TVs Shows, & More.
+            </h1>
+
+            <div class="meta-wrapper">
+
+              <div class="badge-wrapper">
+                <div class="badge badge-fill">PG-18</div>
+
+                <div class="badge badge-outline">HD</div>
+              </div>
+            </div>
+          </div>
+          <div class="mobile-search">
+            <form action="/search" method="get">
+              <center>                 
+                  <input type="text" name="query" placeholder="Find Something To Watch?" style="height: 35px; width: 300px; border-radius: 15px;  text-align: center;" required>
+              </center>
+              <br>
+              <center>
+                <button class="btn btn-primary" type="submit">
+                  <ion-icon name="search" role="img" class="md hydrated" aria-label="search"></ion-icon>
+                  <span>Search</span>
+                </button>
+              </center>
+            </form>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- 
+        - #UPCOMING
+      -->
+
+      <section id="upcoming-movies" class="upcoming">
+        <div class="container">
+          <div class="flex-wrapper">
+            <div class="title-wrapper">
+              <p class="section-subtitle">Online Streaming</p>
+              <h2 class="h2 section-title">Upcoming Movies</h2>
+            </div>
+          </div>
+          <ul class="movies-list  has-scrollbar">
+            {% for up in upcoming %}
+            <li>
+              <div class="movie-card">
+                <a href="#top">
+                  <figure class="card-banner">
+                    <img src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/{{ up['poster_path'] }}" alt="{{ up['title'] }}">
+                  </figure>
+                </a>
+                <div class="title-wrapper">
+                  <a href="#top">
+                    <h3 class="card-title">{{ up['title'] }}</h3>
+                  </a>
+                  <time datetime="2022">{{ up['release_date'] }}</time>
+                </div>
+                <div class="card-meta">
+                  <div class="rating">
+                    <ion-icon name="star"></ion-icon>
+                    <data>{{ up['vote_average'] }}</data>
+                  </div>
+                </div>
+
+              </div>
+            </li>
+            {% endfor %}
+      </section>
+
+      <!-- 
+        - #TOP RATED
+      -->
+
+      <section id="trending-movies" class="top-rated">
+        <div class="container">
+          <p class="section-subtitle">Popular Movies</p>
+          <h2 class="h2 section-title">Top Rated Movies</h2>
+          <ul class="movies-list">
+            {% for movie in movies %}
+            <li>
+              <div class="movie-card">
+                <a href="http://192.168.1.121:9999/watch/movie/{{ movie['id'] }}">
+                  <figure class="card-banner">
+                    <img src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/{{ movie['poster_path'] }}" alt="{{ movie['title'] }}">
+                  </figure>
+                </a>
+                <div class="title-wrapper">
+                  <a href="http://192.168.1.121:9999/watch/movie/{{ movie['id'] }}">
+                    <h3 class="card-title">{{ movie['title'] }}</h3>
+                  </a>
+                  <time datetime="2022">{{ movie['release_date'] }}</time>
+                </div>
+                <div class="card-meta">
+                  <div class="rating">
+                    <ion-icon name="star"></ion-icon>
+                    <data>{{ movie['vote_average'] }}</data>
+                  </div>
+                </div>
+
+              </div>
+            </li>
+            {% endfor %}
+      </section>
+
+      <!-- 
+        - #TV SERIES
+      -->
+
+      <section id="trending-tv" class="tv-series">
+        <div class="container">
+          <p class="section-subtitle">Popular TV Series</p>
+          <h2 class="h2 section-title">Best Trending TV Series</h2>
+          <ul class="movies-list">
+            {% for t in tv %}
+            <li>
+              <div class="movie-card">
+                <a href="http://192.168.1.121:9999/watch/tv/{{ t['id'] }}">
+                  <figure class="card-banner">
+                    <img src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/{{ t['poster_path'] }}" alt="{{ t['name'] }}">
+                  </figure>
+                </a>
+                <div class="title-wrapper">
+                  <a href="http://192.168.1.121:9999/watch/tv/{{ t['id'] }}">
+                    <h3 class="card-title">{{ t['name'] }}</h3>
+                  </a>
+                  <time datetime="2022">{{ t['first_air_date'] }}</time>
+                </div>
+                <div class="card-meta">
+                  <div class="rating">
+                    <ion-icon name="star"></ion-icon>
+                    <data>{{ t['vote_average'] }}</data>
+                  </div>
+                </div>
+              </div>
+            </li>
+            {% endfor %}
+        </div>
+      </section>
+    </article>
+  </main>
+  <!-- 
+    - #FOOTER
+  -->
+
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="footer-brand-wrapper">
+          <a href="#top" class="logo">
+            <img src="https://cdn.discordapp.com/attachments/1187754883303084159/1189742144383107133/favicon2.ico" alt="Trinix Movies" height="50" width="50">
+          </a>
+
+          <ul class="footer-list">
+
+            <li>
+              <a href="#top" class="footer-link">Home</a>
+            </li>
+
+            <li>
+              <a href="#trending-movies" class="footer-link">Movie</a>
+            </li>
+
+            <li>
+              <a href="#trending-tv" class="footer-link">TV Show</a>
+            </li>
+          </ul>
+
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="quicklink-wrapper">
+
+          <ul class="quicklink-list">
+
+            <li>
+              <a href="#" class="quicklink-link">Faq</a>
+            </li>
+
+            <li>
+              <a href="#" class="quicklink-link">Help center</a>
+            </li>
+
+            <li>
+              <a href="#" class="quicklink-link">Terms of use</a>
+            </li>
+
+            <li>
+              <a href="#" class="quicklink-link">Privacy</a>
+            </li>
+
+          </ul>
+
+          <ul class="social-list">
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-facebook"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-twitter"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-pinterest"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-linkedin"></ion-icon>
+              </a>
+            </li>
+
+          </ul>
+
+        </div>
+
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <center><p class="section-subtitle">This site does not store any files on our server, we only linked to the media which is hosted on 3rd party services.</p></center>
+      </div>
+    </div>
+  </footer>
+  
+
+  <!-- 
+    - #GO TO TOP
+  -->
+  <a href="#top" class="go-top" data-go-top>
+    <ion-icon name="chevron-up"></ion-icon>
+  </a>
+  <!-- 
+    - custom js link
+  -->
+  <script src="{{ url_for('static', filename='js/style.js') }}"></script>
+  <!-- 
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
