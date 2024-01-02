@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Now Streaming {{ title }}</title>
+  <link rel="icon" href="https://image.tmdb.org/t/p/w300_and_h450_bestv2/{{ thumbnail }}" type="image/x-icon">
+	<meta name='viewport' content='width=device-width, initial-scale=1'>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/stream.css') }}">
+  <link rel="manifest" href="{{ url_for('static', filename='json/manifest.json') }}">
+  <script src="https://kit.fontawesome.com/67c2ba6bdb.js" crossorigin="anonymous"></script>
+  <script src="{{ url_for('static', filename='js/stream.js') }}"></script>
+  <meta property="og:title" content="{{ title }}">
+  <meta property="og:description" content="{{ overview }}">
+  <meta property="og:image" content="https://image.tmdb.org/t/p/w300_and_h450_bestv2/{{ thumbnail }}">
+</head>
+<body>
+  <div class="video-container">
+  <center><h1><u>Now Streaming {{ title }}</u></h1></center>
+  <center><p>{{ overview }}</p></center>
+  <iframe width="890" height="500" 
+    src="{{ video_url }}" 
+    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+    allowfullscreen>
+  </iframe></br>
+	<center><p class="section-subtitle">This site does not store any files on our server, we only linked to the media which is hosted on 3rd party services.</p></center></br>
+  </div>
+  <section class="credits">
+    <div style="position: relative; left: -15px; top: 0px">
+    <h4>© 2022 - 2023 Trinix ™ All rights reserved. <br>
+    <center> General Public License: <a href="https://github.com/LethalServices/SearchAPI/blob/main/LICENSE" class="fa fa-github"></a> Discord: <a href="https://discord.com/invite/n5W9ZjRZ3e" class="fab fa-discord"></a></center>
+    </h4>
+    </div>
+  </section>
+</body>
+</html>
