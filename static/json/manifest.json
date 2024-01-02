@@ -1,0 +1,25 @@
+{
+    "short_name": "Trinix",
+    "name": "Trinix Streaming",
+    "icons": [
+      {
+        "src": "https://cdn.discordapp.com/attachments/1187754883303084159/1189742144383107133/favicon2.ico",
+        "sizes": "48x48",
+        "type": "image/webp"
+      },
+      {
+        "src": "https://cdn.discordapp.com/attachments/1187754883303084159/1189742144383107133/favicon2.ico",
+        "sizes": "72x72 96x96 128x128 256x256"
+      },
+      {
+        "src": "https://cdn.discordapp.com/attachments/1187754883303084159/1189742144383107133/favicon2.ico",
+        "sizes": "any",
+        "type": "image/svg+xml"
+      }
+    ],
+    "start_url": "http://192.168.1.121:9999/",
+    "background_color": "#ffffff",
+    "display": "standalone",
+    "scope": "/",
+    "theme_color": "#000000"
+}
