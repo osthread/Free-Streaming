@@ -11,22 +11,7 @@ class Streaming:
         self.app = Flask(__name__)
         self.routes()
         self.sapi = Search()
-        self.headers = {"accept": "application/json", "Authorization": "API-Key"}
 
-    def check_movie(self, media_type, video_id):
-        response = requests.get(f"https://api.themoviedb.org/3/{media_type}/{video_id}", headers=self.headers).json()
-
-        overview = response.get("overview")
-        title = response.get("original_title" if media_type == "movie" else "name")
-        thumbnail = response.get("poster_path")
-
-        video_url = f"https://vidsrc.to/embed/{media_type}/{video_id}"
-        check_res = requests.get(video_url)
-        if check_res.status_code != 200:
-            video_url = video_url.replace("vidsrc.to", "vidsrc.xyz")
-
-        return video_url, overview, title, thumbnail
-    
     def routes(self):
         @self.app.route('/watch/<key>')
         def index(key):
@@ -43,7 +28,7 @@ class Streaming:
             if media_type not in ["movie", "tv"]: 
                 abort(404)
 
-            response = self.check_movie(media_type, video_id)
+            response = self.sapi.check_movie(media_type, video_id)
 
             return render_template('watch.html', video_url=response[0], title=response[2], overview=response[1], thumbnail=response[3])
 
