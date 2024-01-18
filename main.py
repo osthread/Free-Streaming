@@ -4,7 +4,7 @@ from flask import Flask, request, render_template, abort
 
 from Modules.Api.searchapi import Search
 
-import os, string, requests, sys
+import requests
 
 class Streaming:
     def __init__(self):
