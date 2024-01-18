@@ -13,7 +13,21 @@ class Search:
                 invalid_movies_ids.add(result["id"])
 
         return invalid_movies_ids
+        
+    def check_movie(self, media_type, video_id):
+        response = get(f"https://api.themoviedb.org/3/{media_type}/{video_id}", headers=self.headers).json()
 
+        overview = response.get("overview")
+        title = response.get("original_title" if media_type == "movie" else "name")
+        thumbnail = response.get("poster_path")
+
+        video_url = f"https://vidsrc.to/embed/{media_type}/{video_id}"
+        check_res = get(video_url)
+        if check_res.status_code != 200:
+            video_url = video_url.replace("vidsrc.to", "vidsrc.xyz")
+
+        return video_url, overview, title, thumbnail
+    
     def modified_results(self, original_results, invalid_movies_ids):
         required_keys = ['id', 'title', 'overview', 'poster_path', 'media_type','popularity', 'release_date']
         modified_and_valid_results = []
