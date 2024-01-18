@@ -9,7 +9,6 @@ import requests
 class Streaming:
     def __init__(self):
         self.app = Flask(__name__)
-        self.db_manager = DatabaseManager()
         self.routes()
         self.sapi = Search()
         self.headers = {"accept": "application/json", "Authorization": "API-Key"}
