@@ -30,9 +30,6 @@ class Streaming:
                 abort(404)
 
             response = requests.get(f"https://api.themoviedb.org/3/{media_type}/{video_id}", headers=self.headers).json()
-            if response.status_code != 200:
-                abort(response.status_code)
-
             overview = response.get("overview")
             title = response.get("original_title" if media_type == "movie" else "name")
             thumbnail = response.get("poster_path")
