@@ -13,7 +13,7 @@ class Streaming:
         self.sapi = Search()
 
     def routes(self):
-        @self.app.route('/watch/<key>')
+        @self.app.route('/watch/')
         def index(key):
             return render_template('index.html', movies=self.sapi.get_trending_movies(), tv=self.sapi.get_trending_tv(), upcoming=self.sapi.get_upcoming())
 
