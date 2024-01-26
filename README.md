@@ -2,8 +2,8 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/MaxieDev/Trinix/">
-    <img src="https://cdn.discordapp.com/attachments/1187754883303084159/1194520502081966110/Untitled_design2.png" alt="Logo" width="80" height="80">
+  <a href="https://github.com/MaxieDev/">
+    <img src="https://cdn.discordapp.com/attachments/1187754883303084159/1188395187253284964/3.png" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">Trinix Free-Streaming</h3>
