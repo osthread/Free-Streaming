@@ -30,7 +30,7 @@
 ## Getting Started
 
 ### Prerequisites
-Ensure you have Python 3.9 installed and then set up the bot using the following commands:
+Ensure you have Python 3.9 installed and then set up the website using the following commands:
 
 * Installing Packages
 
