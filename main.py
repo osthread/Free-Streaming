@@ -4,8 +4,6 @@ from flask import Flask, request, render_template, abort
 
 from Modules.Api.searchapi import Search
 
-import requests
-
 class Streaming:
     def __init__(self):
         self.app = Flask(__name__)
