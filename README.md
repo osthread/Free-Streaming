@@ -9,7 +9,7 @@
   <h3 align="center">Trinix Free-Streaming</h3>
 
   <p align="center">
-    Trinix is your go-to free streaming service, designed to make entertainment accessible for everyone. Paired with the Trinix Discord bot, you can effortlessly search and enjoy the latest trending movies and TV shows. Plus, with its automatic update feature, your channel stays in sync with the freshest content. Elevate your streaming experience with Trinix - where simplicity meets professionalism.
+    Trinix is your go-to free streaming service, designed to make entertainment accessible for everyone. Paired with the Trinix Discord bot, you can effortlessly search and enjoy the latest trending movies and TV shows. Plus, with its automatic update feature, your channel stays in sync with the freshest content. Elevate your streaming experience with Trinix - where simplicity meets professionalism. Also, I am not responsible for any of your actions.
     <br />
     <a href="https://discord.gg/rySbUJS64t"><strong>Explore the Discord »</strong></a>
     <br />
