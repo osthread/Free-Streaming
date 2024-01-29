@@ -3,7 +3,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/MaxieDev/">
-    <img src="https://cdn.discordapp.com/attachments/1187754883303084159/1188395187253284964/3.png" alt="Logo" width="80" height="80">
+    <img src="https://cdn.discordapp.com/attachments/1187754883303084159/1195148709973991536/Untitled_Artwork.png" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">Trinix Free-Streaming</h3>
