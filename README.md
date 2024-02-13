@@ -89,4 +89,8 @@ Distributed under the GPL-3.0 License. See `LICENSE.txt` for more information.
 ## Contact
 
 * _For support, please refer to the [discord](https://discord.gg/CMDnygFbXR)_
+
+  
+<!-- ACKNOWLEDGMENTS -->
+## Acknowledgments
 * Logo By gh0st_artz
