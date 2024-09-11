@@ -1,4 +1,4 @@
-# Trinix Free-Streaming
+# Free-Streaming
 
 <div align="center">
   <a href="https://github.com/osthread/">
