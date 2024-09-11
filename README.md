@@ -68,9 +68,5 @@ pm2 stop <ID>           # Stop a process
 
 Distributed under the GPL-3.0 License. See `LICENSE.txt` for more information.
 
-## Contact
-
-For support, please join our [Discord server](https://discord.gg/CMDnygFbXR).
-
 ## Acknowledgments
 * Logo by gh0st_artz
