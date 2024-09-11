@@ -1,96 +1,76 @@
-<a name="readme-top"></a>
-<!-- PROJECT LOGO -->
-<br />
+# Trinix Free-Streaming
+
 <div align="center">
-  <a href="https://github.com/MaxieDev/">
-    <img src="https://trinixbot.xyz/img/Untitled_Artwork.png" alt="Logo" width="150" height="80">
+  <a href="https://github.com/osthread/">
+    <img src="og_trinix.png" alt="Logo" width="150" height="80">
   </a>
 
   <h3 align="center">Trinix Free-Streaming</h3>
 
   <p align="center">
-    Trinix is your go-to free streaming service, designed to make entertainment accessible for everyone. Paired with the Trinix Discord bot, you can effortlessly search and enjoy the latest trending movies and TV shows. Plus, with its automatic update feature, your channel stays in sync with the freshest content. Elevate your streaming experience with Trinix - where simplicity meets professionalism. Also, I am not responsible for any of your actions.
-    <br />
-    <a href="https://discord.gg/rySbUJS64t"><strong>Explore the Discord »</strong></a>
-    <br />
-    <br />
+    Your go-to free streaming service, making entertainment accessible for everyone.
+    <br/>
   </p>
 </div>
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+## About The Project
 
+Trinix is a free streaming service designed to make entertainment accessible for everyone. Paired with the Trinix Discord bot, you can effortlessly search and enjoy the latest trending movies and TV shows. With its automatic update feature, your channel stays in sync with the freshest content.
+
+**Note:** The creators of Trinix are not responsible for any actions taken by users of this service.
 
 ### Built With
 
 * Python 3.9
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- GETTING STARTED -->
 ## Getting Started
 
+Follow these simple steps to get Trinix up and running on your local machine.
+
 ### Prerequisites
-Ensure you have Python 3.9 installed and then set up the website using the following commands:
 
-* Installing Packages
+Ensure you have Python 3.9 installed before proceeding.
 
-  ```sh
-  pip install flask
-  ```
-    
-  ```sh
-  pip install flask-cors
-  ```
-  ```sh
-  pip install waitress
-  ```
-  
-  ```sh
-  apt install nodejs npm
-  ```
+### Installation
 
-  ```sh
-  npm install pm2@latest -g
-  ```
+1. Install required Python packages:
+   ```sh
+   pip install flask flask-cors waitress
+   ```
 
-<!-- USAGE EXAMPLES -->
+2. Install Node.js and npm:
+   ```sh
+   apt install nodejs npm
+   ```
+
+3. Install PM2 globally:
+   ```sh
+   npm install pm2@latest -g
+   ```
+
 ## Usage
 
+To start the Trinix server:
 
-```js
+```sh
 pm2 start main.py --interpreter python3
 ```
 
-```js
-pm2 list
+Other useful PM2 commands:
+
+```sh
+pm2 list                # List all processes
+pm2 restart <ID>        # Restart a process
+pm2 stop <ID>           # Stop a process
 ```
 
-```js
-pm2 restart <ID>
-```
-
-```js
-pm2 stop <ID> 
-```
-
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-<!-- LICENSE -->
 ## License
 
 Distributed under the GPL-3.0 License. See `LICENSE.txt` for more information.
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-<!-- CONTACT -->
 ## Contact
 
-* _For support, please refer to the [discord](https://discord.gg/CMDnygFbXR)_
+For support, please join our [Discord server](https://discord.gg/CMDnygFbXR).
 
-  
-<!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
-* Logo By gh0st_artz
+* Logo by gh0st_artz
