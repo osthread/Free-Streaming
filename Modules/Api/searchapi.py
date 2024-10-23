@@ -8,7 +8,7 @@ class Search:
     def check_media(self, results):
         invalid_movies_ids = set()
         for result in results:
-            response = get(f"https://vidsrc.to/embed/{result['media_type']}/{result['id']}")
+            response = get(f"https://stream.tlo.sh/embed/{result['media_type']}/{result['id']}") 
             if response.status_code == 404:
                 invalid_movies_ids.add(result["id"])
 
