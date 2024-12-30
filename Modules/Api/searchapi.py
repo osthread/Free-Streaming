@@ -2,7 +2,6 @@ from requests import get
 
 class Search:
     def __init__(self):
-        self.db_manager = DatabaseManager()
         self.headers = {"accept": "application/json", "Authorization": "API-Key"}
  
     def check_media(self, results):
