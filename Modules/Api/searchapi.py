@@ -20,10 +20,10 @@ class Search:
         title = response.get("original_title" if media_type == "movie" else "name")
         thumbnail = response.get("poster_path")
 
-        video_url = f"https://vidsrc.to/embed/{media_type}/{video_id}"
+        video_url = f"https://stream.sanction.tv/embed/{media_type}/{video_id}"
         check_res = get(video_url)
         if check_res.status_code != 200:
-            video_url = video_url.replace("vidsrc.to", "vidsrc.xyz")
+            video_url = video_url.replace("vidsrc.me", "vidsrc.cc")
 
         return video_url, overview, title, thumbnail
     
